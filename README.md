@@ -13,4 +13,5 @@
 
 <h1> HTML Exam website </h1>
 
-<img src="https://github.com/BRajendra10/HTML/blob/6bee0ef81538f9fbb8d15cc4a0f143fe066cdf5b/HTML-Exam/Images/HTML-Exam.png">
+<a href="https://github.com/BRajendra10/HTML/tree/main/HTML-Exam"><img src="https://github.com/BRajendra10/HTML/blob/6bee0ef81538f9fbb8d15cc4a0f143fe066cdf5b/HTML-Exam/Images/HTML-Exam.png">
+</a>
