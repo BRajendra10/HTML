@@ -9,7 +9,7 @@
 
 <h1> Travel with us </h1>
 
-<img src="https://github.com/BRajendra10/HTML/blob/608f0323c127ef0b6c43efa51a07d485dcecd687/Travel%20with%20us.png">
+<a href="https://github.com/BRajendra10/HTML/tree/main/travel%20with%20us"><img src="https://github.com/BRajendra10/HTML/blob/503307181d2668107dc3250717251d93015d8d46/travel%20with%20us/Images/Travel%20with%20us.png"></a>
 
 <h1> HTML Exam website </h1>
 
