@@ -1,7 +1,7 @@
 
 <h1> Wireframe </h1>
 
-<img src="https://github.com/BRajendra10/HTML/blob/8c6da66d4e148de3cd34ff1041b936331d36b20f/Wireframe.png">
+<a href="https://github.com/BRajendra10/HTML/tree/main/WIREFRAME-HTML-TABLE"><img src="https://github.com/BRajendra10/HTML/blob/fc266a290f76b31d2f54a3ddccc90e94a91bc138/WIREFRAME-HTML-TABLE/Wireframe.png"></a>
 
 <h1> Mustacchio </h1>
 
