@@ -235,5 +235,276 @@ It must be placed inside the `<head>` tag.
   ```
 
 ---
+Absolutely Rajendra! Here’s a **detailed explanation** of all your intermediate-level HTML interview questions with real-world clarity:
 
-Would you like to continue with more questions from your list? I can start intermediate and then move to advanced as you said earlier.
+---
+
+### 1. **What are the differences between `<section>`, `<article>`, `<aside>`, and `<nav>`?**
+
+All of these are **semantic tags** introduced in HTML5. Here's how they differ:
+
+| Tag         | Purpose                                                                                                                      |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `<section>` | A logical **grouping of related content** under a theme or heading. Often used for page structure.                           |
+| `<article>` | Represents **independent, self-contained content**, like blog posts or news articles. Can be shared/reused outside the page. |
+| `<aside>`   | Represents **side content** like ads, tips, or related links—not core to the main content.                                   |
+| `<nav>`     | Used for **navigation links**, menus, or tables of contents that help users navigate the site.                               |
+
+Example:
+
+```html
+<article>
+  <h2>Blog Post Title</h2>
+  <p>Post content...</p>
+</article>
+
+<aside>
+  <p>Related articles</p>
+</aside>
+```
+
+---
+
+### 2. **How do you make a table in HTML?**
+
+A simple table includes rows (`<tr>`) and columns (`<td>`). Use `<th>` for header cells.
+
+```html
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rajendra</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+---
+
+### 3. **How can you create a form in HTML?**
+
+```html
+<form action="/submit" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="username" required>
+
+  <input type="submit" value="Submit">
+</form>
+```
+
+* Use `<form>` to group form fields
+* Inputs like `<input>`, `<textarea>`, `<select>`, `<button>` go inside
+
+---
+
+### 4. **Explain the purpose of `action` and `method` attributes in forms.**
+
+* **`action`**: URL where the form data will be sent (e.g., `/register`, `api.php`)
+* **`method`**: HTTP method:
+
+  * `GET` – data goes in URL (used for search)
+  * `POST` – data goes in the body (used for login, signup)
+
+Example:
+
+```html
+<form action="/register" method="POST">
+```
+
+---
+
+### 5. **What are `data-*` attributes in HTML5?**
+
+`data-*` are custom attributes used to **store extra info** on elements without affecting layout or behavior.
+
+Example:
+
+```html
+<button data-user-id="123" data-role="admin">Edit</button>
+```
+
+You can access them via JavaScript:
+
+```js
+button.dataset.userId // "123"
+```
+
+They’re helpful in JavaScript-heavy UIs (React, Vanilla JS, etc.).
+
+---
+
+### 6. **How do you disable autocomplete in a form field?**
+
+Use the `autocomplete="off"` attribute:
+
+```html
+<input type="text" name="username" autocomplete="off">
+```
+
+It stops the browser from suggesting saved values.
+
+---
+
+### 7. **What is the `required` attribute in HTML forms?**
+
+It makes a form input **mandatory** before submission. The browser will prevent submission if the field is empty.
+
+Example:
+
+```html
+<input type="email" required>
+```
+
+You’ll see a browser validation popup if it’s empty.
+
+---
+
+### 8. **What are `localStorage`, `sessionStorage`, and cookies?**
+
+These are used to **store data in the browser**:
+
+| Feature           | `localStorage`         | `sessionStorage`          | `Cookies`                |
+| ----------------- | ---------------------- | ------------------------- | ------------------------ |
+| Lifespan          | Until manually cleared | Until tab/browser closed  | Set via expiration       |
+| Size              | \~5MB                  | \~5MB                     | \~4KB                    |
+| Sent with request | ❌ No                   | ❌ No                      | ✅ Yes, sent with HTTP    |
+| Use case          | Save theme, token      | Tab-specific session data | Login sessions, tracking |
+
+Example:
+
+```js
+localStorage.setItem("user", "Rajendra");
+```
+
+---
+
+### 9. **How do you create a drop-down list in HTML?**
+
+Use the `<select>` element with `<option>`s:
+
+```html
+<select name="country">
+  <option value="india">India</option>
+  <option value="usa">USA</option>
+</select>
+```
+
+To select by default:
+
+```html
+<option selected>India</option>
+```
+
+---
+
+### 10. **What’s the difference between `<button>` and `<input type="button">`?**
+
+| Feature           | `<button>`                        | `<input type="button">`         |
+| ----------------- | --------------------------------- | ------------------------------- |
+| Flexibility       | Can have inner HTML, icons, spans | Only text via `value` attribute |
+| Types             | `submit`, `reset`, `button`       | `button` only                   |
+| Style and Control | More customizable                 | Limited styling                 |
+
+Example:
+
+```html
+<button type="submit"><strong>Submit</strong></button>
+<input type="button" value="Click Me">
+```
+
+---
+
+### 11. **What is the difference between `<label for>` and wrapping `<label>` around input?**
+
+Both associate a label with a form input, but the method differs:
+
+✅ **With `for`**:
+
+```html
+<label for="email">Email:</label>
+<input id="email" type="email">
+```
+
+✅ **Wrapping**:
+
+```html
+<label>Email: <input type="email"></label>
+```
+
+Both are valid and support accessibility. Using `for` is clearer for screen readers.
+
+---
+
+### 12. **Can a form have multiple submit buttons? How do you handle them?**
+
+Yes, a form can have **multiple submit buttons**:
+
+```html
+<button type="submit" name="action" value="save">Save</button>
+<button type="submit" name="action" value="delete">Delete</button>
+```
+
+In your backend (or JS), check the `action` value to know which button was clicked.
+
+---
+
+### 13. **What is the `<fieldset>` and `<legend>` tag used for?**
+
+They’re used to **group related fields** in a form and provide a heading:
+
+```html
+<fieldset>
+  <legend>Personal Info</legend>
+  <label>Name: <input type="text"></label>
+</fieldset>
+```
+
+* `<fieldset>`: groups the inputs visually and semantically
+* `<legend>`: adds a title
+
+This improves **form accessibility** and structure.
+
+---
+
+### 14. **What is placeholder? Can screen readers detect it?**
+
+The `placeholder` attribute shows **temporary hint text** inside input fields:
+
+```html
+<input type="text" placeholder="Enter your name">
+```
+
+⚠️ Screen readers often **do not read** placeholder text. That’s why using `<label>` is essential for accessibility.
+
+---
+
+### 15. **How to create an accessible form?**
+
+✅ Key practices:
+
+* Always use **`<label>`** for each input
+* Associate labels using `for` or wrapping
+* Use **semantic tags** like `<fieldset>` and `<legend>`
+* Provide clear **error messages**
+* Use **`aria-*` attributes** where needed for assistive technologies
+* Ensure good **contrast**, focus styles, and keyboard navigation
+* Use `required`, `aria-required`, and proper `type` attributes
+
+Example:
+
+```html
+<label for="email">Email:</label>
+<input id="email" type="email" aria-required="true" required>
+```
+
+---
+
+Let me know if you want to move on to **advanced HTML questions** next!
+
