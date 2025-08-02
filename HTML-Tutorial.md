@@ -508,3 +508,366 @@ Example:
 
 Let me know if you want to move on to **advanced HTML questions** next!
 
+Absolutely Rajendra! You're now asking **advanced-level HTML questions**—excellent for job interviews and deeper front-end understanding. Here's a **detailed answer for each one**:
+
+---
+
+### 1. **How do you make a website accessible with HTML alone?**
+
+You can greatly improve accessibility using only HTML by following these practices:
+
+✅ **Use semantic HTML**:
+
+* Use `<header>`, `<nav>`, `<main>`, `<article>`, `<footer>`, etc.
+* It gives screen readers meaningful context.
+
+✅ **Proper labels**:
+
+* Use `<label for="input-id">` for every form input.
+
+✅ **Alt text for images**:
+
+```html
+<img src="logo.png" alt="Company logo">
+```
+
+✅ **Headings hierarchy**:
+
+* Start with `<h1>`, then use `<h2>`, `<h3>`, etc. in order.
+
+✅ **Keyboard accessibility**:
+
+* Use focusable elements like `<button>`, `<a href="">`, `<input>`
+
+✅ **Avoid click-only interactions**:
+
+* Ensure links and buttons are accessible via keyboard (Tab + Enter)
+
+✅ **Use `lang` attribute**:
+
+```html
+<html lang="en">
+```
+
+---
+
+### 2. **What is ARIA (Accessible Rich Internet Applications)?**
+
+**ARIA** is a set of attributes (`aria-*`) that enhance accessibility for users with assistive technologies, especially when HTML falls short (e.g., custom components).
+
+Examples:
+
+```html
+<div role="button" tabindex="0" aria-pressed="false">Toggle</div>
+```
+
+* `role="button"`: tells screen reader this is a button
+* `tabindex="0"`: makes it keyboard focusable
+* `aria-pressed`: gives current state
+
+Use ARIA **only when native elements can't do the job**.
+
+---
+
+### 3. **How do you improve HTML SEO using proper tags?**
+
+Good HTML structure improves SEO:
+
+✅ Use semantic tags:
+
+* `<header>`, `<main>`, `<article>`, `<footer>`, `<nav>`
+
+✅ Use heading structure:
+
+* `<h1>` for main topic
+* `<h2>` for subsections
+
+✅ Add meta tags:
+
+```html
+<meta name="description" content="Rajendra's front-end blog">
+<meta name="robots" content="index, follow">
+```
+
+✅ Use alt attributes:
+
+```html
+<img src="..." alt="Rajendra's photo">
+```
+
+✅ Use `<title>` and `<meta>` properly in `<head>`:
+
+```html
+<title>React Projects by Rajendra</title>
+```
+
+✅ Use proper link structure:
+
+```html
+<a href="/blog/react-hooks">Read more</a>
+```
+
+---
+
+### 4. **How do you use HTML to improve performance (e.g., `loading="lazy"`, `<picture>` tag)?**
+
+✅ **Lazy loading images**:
+
+```html
+<img src="big.jpg" loading="lazy" alt="..." />
+```
+
+✅ **Responsive `<picture>` element**:
+
+```html
+<picture>
+  <source srcset="image.webp" type="image/webp">
+  <img src="image.jpg" alt="..." />
+</picture>
+```
+
+* Helps load optimized images for browsers that support them.
+
+✅ **Preload critical resources**:
+
+```html
+<link rel="preload" href="main.css" as="style">
+```
+
+✅ **Minimize blocking scripts**:
+Use `async` or `defer` on scripts.
+
+---
+
+### 5. **What is the difference between `<script>` in head and body?**
+
+* In `<head>`: blocks page rendering unless `defer` or `async` is used.
+* In `<body>` (at bottom): ensures HTML loads before script runs.
+
+**Best practice**: Place scripts just before `</body>` or use `defer`.
+
+---
+
+### 6. **What is the `defer` and `async` attribute in `<script>` tag?**
+
+| Attribute | Behavior                                                                             |
+| --------- | ------------------------------------------------------------------------------------ |
+| `defer`   | Script loads in parallel and executes **after** HTML parsing. Keeps execution order. |
+| `async`   | Loads in parallel and executes **as soon as it's ready**, may not respect order.     |
+
+Example:
+
+```html
+<script src="main.js" defer></script>
+```
+
+---
+
+### 7. **How does HTML5 support offline storage?**
+
+HTML5 offers:
+
+✅ **localStorage**:
+
+* Persistent data, survives page reload and browser restart.
+
+✅ **sessionStorage**:
+
+* Data persists only during the current tab session.
+
+✅ **Application Cache** (deprecated): replaced by **Service Workers** and **Cache API**.
+
+Example:
+
+```js
+localStorage.setItem("theme", "dark");
+```
+
+---
+
+### 8. **How do `<template>` and `<slot>` work in HTML5?**
+
+✅ **`<template>`**:
+
+* Defines HTML code that **won’t render** until cloned in JS.
+
+```html
+<template id="card">
+  <div class="card">Hello!</div>
+</template>
+
+<script>
+  const tmpl = document.getElementById("card");
+  document.body.append(tmpl.content.cloneNode(true));
+</script>
+```
+
+✅ **`<slot>`**:
+
+* Used in **Web Components** to insert content into custom elements.
+
+```html
+<custom-card>
+  <span slot="title">Welcome</span>
+</custom-card>
+```
+
+---
+
+### 9. **How would you design an HTML structure for a blog/article with best semantics?**
+
+```html
+<article>
+  <header>
+    <h1>Why React is Awesome</h1>
+    <p>by Rajendra</p>
+  </header>
+
+  <section>
+    <h2>Introduction</h2>
+    <p>...</p>
+  </section>
+
+  <section>
+    <h2>JSX Explained</h2>
+    <p>...</p>
+  </section>
+
+  <footer>
+    <p>Tags: React, JavaScript</p>
+  </footer>
+</article>
+```
+
+Use `<article>`, `<header>`, `<section>`, `<footer>` semantically.
+
+---
+
+### 10. **How do you embed SVG in HTML and when should you use inline SVG?**
+
+✅ **Embed with `<img>`**:
+
+```html
+<img src="logo.svg" alt="Site Logo">
+```
+
+✅ **Inline SVG**:
+
+```html
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="black" fill="red" />
+</svg>
+```
+
+**When to use inline SVG**:
+
+* When you need to **style**, **animate**, or **manipulate** SVG with CSS/JS.
+
+---
+
+### 11. **Explain the use of `<canvas>` and when it's preferred.**
+
+The `<canvas>` element is used for **drawing graphics**, like:
+
+* Games
+* Data visualizations
+* Custom UI elements
+
+Example:
+
+```html
+<canvas id="myCanvas" width="200" height="100"></canvas>
+```
+
+Used with JS:
+
+```js
+const ctx = document.getElementById("myCanvas").getContext("2d");
+ctx.fillRect(0, 0, 150, 75);
+```
+
+**Preferred when you need pixel-by-pixel control**.
+
+---
+
+### 12. **How to handle responsive images in HTML?**
+
+✅ Use `srcset` and `sizes`:
+
+```html
+<img
+  src="image-400.jpg"
+  srcset="image-400.jpg 400w, image-800.jpg 800w"
+  sizes="(max-width: 600px) 400px, 800px"
+  alt="Responsive image"
+/>
+```
+
+✅ Or use `<picture>` for format-specific images (e.g. WebP, JPEG).
+
+---
+
+### 13. **What are the accessibility roles and how do you use `role=""` attribute in HTML?**
+
+**Roles** tell assistive tech what a component is:
+
+Examples:
+
+```html
+<div role="button" tabindex="0">Click Me</div>
+```
+
+Common roles:
+
+* `role="navigation"`
+* `role="dialog"`
+* `role="alert"`
+* `role="main"`
+
+Use roles **only when native elements aren't sufficient**.
+
+---
+
+### 14. **How do you handle keyboard navigation for custom HTML components?**
+
+✅ Use `tabindex`:
+
+```html
+<div tabindex="0">Focusable element</div>
+```
+
+✅ Add key event handling:
+
+```js
+element.addEventListener('keydown', e => {
+  if (e.key === 'Enter') { /* your action */ }
+});
+```
+
+✅ Use proper `aria-*` roles if it's not a native element.
+
+---
+
+### 15. **Can HTML be used without CSS/JS for an MVP prototype? Explain with limitations.**
+
+✅ Yes, you **can build an MVP with pure HTML**:
+
+* Structure and content are possible
+* Forms can work (submissions, input)
+
+**Limitations**:
+
+* No **styling or branding**
+* No **interactivity** (modals, validation, tabs, etc.)
+* Poor **user experience**
+* No **animations or feedback**
+* Can’t **store or manipulate data** without JS
+
+**When to use it**:
+
+* For wireframes, documentation, or quick drafts
+* For testing content or accessibility without distractions
+
+---
+
+Let me know if you want a **summary PDF**, **practice questions**, or **mock interview Q\&A** next!
